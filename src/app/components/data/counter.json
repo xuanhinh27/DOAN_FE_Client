@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "icon":"far fa-smile",
+        "title":"Khách hàng hài lòng với dịch vụ",
+        "value":6500
+    },
+    {
+        "id":2,
+        "icon":"fal fa-file-medical-alt",
+        "title":"Ca điều trị khó",
+        "value":541
+    },
+    {
+        "id":3,
+        "icon":"fal fa-heartbeat",
+        "title":"Giải thưởng quốc gia",
+        "value":5
+    },
+    {
+        "id":4,
+        "icon":"fas fa-users",
+        "title":"Nha sĩ",
+        "value":30
+    }
+]
