@@ -2,37 +2,37 @@
     <div class="container">
         <div class="section-title centered">
             <span class="subtitle">Call to Action</span>
-            <h3 class="title">Make a Request</h3>
+            <h3 class="title">Yêu cầu</h3>
         </div>
         <div class="sigma_form style-2">
             <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <input type="text" placeholder="Enter Full Name" name="name" [(ngModel)]="model.name"
+                            <input type="text" placeholder="Nhập họ tên" name="name" [(ngModel)]="model.name"
                                 required>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <input type="email" placeholder="Email Address" name="email" [(ngModel)]="model.email"
+                            <input type="email" placeholder="Nhập email" name="email" [(ngModel)]="model.email"
                                 required>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <input type="number" placeholder="Phone number" name="phone" [(ngModel)]="model.phone"
+                            <input type="number" placeholder="Nhập số điện thoại" name="phone" [(ngModel)]="model.phone"
                                 required>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <input type="text" placeholder="Subject" name="subject" [(ngModel)]="model.subject" required>
+                            <input type="text" placeholder="Nhập tiêu đề" name="subject" [(ngModel)]="model.subject" required>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <textarea rows="10" placeholder="Enter Message" name="message" [(ngModel)]="model.message"
+                            <textarea rows="10" placeholder="Nhập nội dung" name="message" [(ngModel)]="model.message"
                                 required>
             </textarea>
                         </div>
