@@ -34,65 +34,7 @@
                         </div>
                         <!-- Post Meta End -->
                         <!-- Comments Start -->
-                        <div class="section pb-0">
-                            <h3>Comments</h3>
-                            <div class="comments-list">
-                                <ul *ngFor="let review of item.reviews">
-                                    <!-- Data -->
-                                    <li class="comment-item">
-                                        <img [src]="user.image" [alt]="user.name"
-                                            *ngFor="let user of getAuthor(review.user)">
-                                        <div class="comment-body" *ngFor="let user of getAuthor(review.user)">
-                                            <h5>{{user.name}}</h5>
-                                            <span class="date"> {{review.commentdate}}</span>
-                                            <p>{{review.comment}}</p>
-                                            <a href="#" class="btn-link"> Reply </a>
-                                        </div>
-                                    </li>
-                                    <!-- Data -->
-                                    <li class="comment-item" *ngFor="let review of review.replies">
-                                        <img [src]="user.image" [alt]="user.name"
-                                            *ngFor="let user of getAuthor(review.user)">
-                                        <div class="comment-body" *ngFor="let user of getAuthor(review.user)">
-                                            <h5>{{user.name}}</h5>
-                                            <span class="date"> {{review.commentdate}}</span>
-                                            <p>{{review.comment}}</p>
-                                            <a href="#" class="btn-link"> Reply </a>
-                                        </div>
-                                    </li>
-                                    <!-- Data -->
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="section">
-                            <h3>Leave a Reply</h3>
-                            <div class="comment-form">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Your Name" class="form-control"
-                                                    name="fname" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="email" placeholder="Your E-mail" class="form-control"
-                                                    name="email" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <textarea class="form-control" placeholder="Enter Comment here" value=""
-                                                    name="comment" rows="7" required></textarea>
-                                            </div>
-                                            <button type="submit" class="sigma_btn-custom" name="button">Post
-                                                Comment</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+
                         <!-- Comments End -->
                     </div>
                 </div>

@@ -26,7 +26,7 @@
                                     </div>
                                     <p>{{item.qualification}}</p>
                                     <div class="d-flex align-items-center mt-4">
-                                        <a routerLink="/doctor-details/{{item.id}}" class="sigma_btn">View More</a>
+                                        <a routerLink="/doctor-details/{{item.id}}" class="sigma_btn">Chi tiết</a>
                                         <div class="sigma_team-controls ml-3">
                                             <a href="javascript:void(0)" [ngClass]="item.favorite ? 'active':''"
                                                 (click)="favoriteTrigger(item)">
@@ -45,7 +45,7 @@
                                         </span>
                                         <span>
                                             <i class="fal fa-award"></i>
-                                            {{item.experience}} Yrs Experience
+                                            {{item.experience}} năm kinh nghiệm
                                         </span>
                                         <span>
                                             <i class="fal fa-calendar"></i>

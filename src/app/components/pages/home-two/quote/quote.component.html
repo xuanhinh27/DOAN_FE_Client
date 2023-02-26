@@ -7,26 +7,27 @@
             <div class="col-lg-8">
                 <div class="sigma_form style-6">
                     <div class="section-title">
-                        <h3 class="title mb-1 text-white">Get in Touch</h3>
-                        <p class="text-white">We Will Be Happy To Assist You</p>
+                        <h3 class="title mb-1 text-white">Liên hệ với chúng tôi</h3>
+                        <p class="text-white">
+                          Chúng tôi sẽ được hạnh phúc để hỗ trợ bạn</p>
                     </div>
                     <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
                         <div class="form-group">
                             <i class="fal fa-user"></i>
-                            <input type="text" placeholder="Name" name="name" [(ngModel)]="model.name" required>
+                            <input type="text" placeholder="Họ và tên" name="name" [(ngModel)]="model.name" required>
                         </div>
                         <div class="form-group">
                             <i class="fal fa-envelope"></i>
                             <input type="email" placeholder="Email" name="email" [(ngModel)]="model.email" required>
                         </div>
                         <div class="form-group">
-                            <textarea rows="5" placeholder="Message" name="message" [(ngModel)]="model.message"
+                            <textarea rows="5" placeholder="Ghi chú" name="message" [(ngModel)]="model.message"
                                 required></textarea>
                         </div>
                         <re-captcha (resolved)="resolved($event)" name="recaptcha" [(ngModel)]="model.recaptcha"
                             siteKey="6LdxUhMaAAAAAIrQt-_6Gz7F_58S4FlPWaxOh5ib" size="invisible"></re-captcha>
                         <button type="submit" class="btn-block secondary"
-                            [disabled]="!contactForm.form.valid">Send</button>
+                            [disabled]="!contactForm.form.valid">Gửi</button>
                         <!-- Form Messages -->
                         <div class="service-error mt-4 w-100" *ngIf="error">
                             <ngb-alert type="danger" class="mb-0 w-100" [dismissible]="false">

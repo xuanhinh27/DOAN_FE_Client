@@ -1,22 +1,19 @@
 [
     {
         "id":1,
-        "title":"Destinations"
+        "title":"Chuyên khoa Răng - Hàm - Mặt"
     },
     {
         "id":2,
-        "title":"Hotels"
+        "title":"Chuyên khoa chỉnh nha"
     },
     {
         "id":3,
-        "title":"News"
+        "title":"Chuyên khoa phục hình"
     },
     {
         "id":4,
-        "title":"StartUp"
-    },
-    {
-        "id":5,
-        "title":"Strategy"
+        "title":"Chuyên khoa tiểu phẫu"
     }
+
 ]

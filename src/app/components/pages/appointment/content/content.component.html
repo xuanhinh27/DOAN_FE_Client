@@ -6,130 +6,91 @@
                     <div class="col-lg-8">
                         <div class="sigma_form style-7">
                             <div class="form-block">
-                                <h4>Your Information:</h4>
+                                <h4>Thông tin cá nhân:</h4>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <i class="fal fa-user"></i>
-                                            <input type="text" formControlName="fullname" placeholder="Patient Name">
+                                            <input class="form-control" type="text" formControlName="fullname" [(ngModel)]="name" placeholder="Default input" aria-label="default input example">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <i class="fal fa-at"></i>
-                                            <input type="email" formControlName="email" placeholder="Email">
+                                            <input type="email" [(ngModel)]="email" formControlName="email" placeholder="Email">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <i class="fal fa-calendar-alt"></i>
-                                            <input type="text" formControlName="dateofbirth" data-provide="datepicker"
-                                                placeholder="Date of Birth">
+                                            <input type="text" [(ngModel)]="dob" formControlName="dateofbirth" data-provide="datepicker"
+                                                placeholder="Ngày sinh">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <i class="fal fa-phone"></i>
-                                            <input type="text" formControlName="phoneno" placeholder="Phone Number">
+                                            <input  [(ngModel)]="sdt" type="text" formControlName="phoneno" placeholder="SĐT">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-block d-flex">
-                                <h4 class="mb-0 mr-4">Gender:</h4>
+                                <h4 class="mb-0 mr-4">Giới tính:</h4>
                                 <div class="d-flex align-items-center">
                                     <input type="radio" id="radio" formControlName="gender" value="Male">
-                                    <label class="mb-0" for="radio">Male</label>
+                                    <label class="mb-0" for="radio">Nam</label>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <input type="radio" id="radio2" formControlName="gender" value="Female">
-                                    <label class="mb-0" for="radio2">Female</label>
+                                    <label class="mb-0" for="radio2">Nữ</label>
                                 </div>
                             </div>
                             <div class="form-block">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <select formControlName="hospital">
-                                                <option value="1" selected>Select Hospital</option>
-                                                <option value="2">Hospital 1</option>
-                                                <option value="3">Hospital 2</option>
-                                                <option value="4">Hospital 3</option>
+                                            <select  formControlName="service" [(ngModel)]="dichVu">
+                                              <option *ngFor="let a of items" [ngValue]="a">{{a.name}}</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <select formControlName="service">
-                                                <option value="1" selected>Select Service</option>
-                                                <option value="2">Service 1</option>
-                                                <option value="3">Service 2</option>
-                                                <option value="4">Service 3</option>
-                                            </select>
+                                            <select class="form-select"  >
+                                               
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                              </select>
+                                        </div>
+                                    </div>
+ 
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            
+                                       
+                                                <input id="startDate" class="form-control" type="date" />
+
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <i class="fal fa-calendar-alt"></i>
-                                            <input type="text" formControlName="date" data-provide="datepicker"
-                                                placeholder="Select Date">
+                                            <select  formControlName="condition" >
+                                                <option *ngFor="let a of times" [ngValue]="a">{{a.name}}</option>
+                                              </select>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <i class="fal fa-user-md"></i>
-                                            <input type="text" formControlName="doctor" placeholder="Select Doctor">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <textarea formControlName="remarks" rows="7" value=""
-                                                placeholder="Note To The Doctor(Optional)"></textarea>
+                                            <textarea   rows="7" value=""
+                                                placeholder="Ghi chú"></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-block mb-0">
-                                <h4>Payment Information:</h4>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label>Name On Card</label>
-                                            <input type="text" formControlName="cardName" placeholder="Dorothy Schneider">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label>Card Number</label>
-                                            <div class="payment-card-wrapper d-block d-sm-flex align-items-center">
-                                                <input type="text" formControlName="cardNumber"
-                                                    placeholder="xxxx-xxxx-xxxx-xxxx">
-                                                <div class="card-image">
-                                                    <img src="assets/img/book-apppointment/243x50.png" alt="img">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label>Expiration Date</label>
-                                            <input type="text" formControlName="expDate" placeholder="mm/yy"
-                                                data-provide="datepicker">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label>Security Code</label>
-                                            <input type="text" formControlName="cardCvv" placeholder="CCV">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center mt-2">
-                                <input type="checkbox" id="checkbox" value="accept" formControlName="condition">
-                                <label class="mb-0" for="checkbox">I accept <a href="#">Terms</a> and <a
-                                        href="#">conditions</a> and general policy</label>
-                            </div>
+
+
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -139,38 +100,52 @@
                                 <h5 class="widget-title">Booking Summary</h5>
                                 <ul>
                                     <li class="d-flex align-items-center justify-content-between">
-                                        <span>Date</span>
-                                        <span>07/10/2021</span>
+                                        <span>Họ tên</span>
+                                        <span>{{name ? name : '-----------------'}}</span>
                                     </li>
                                     <li class="d-flex align-items-center justify-content-between">
-                                        <span>Time</span>
-                                        <span>08:30 PM</span>
+                                        <span>Email</span>
+                                        <span>{{email ? email : '-----------------'}}</span>
                                     </li>
                                     <li class="d-flex align-items-center justify-content-between">
-                                        <span>Doctor Name</span>
-                                        <span>Dr. Joseph Doe</span>
+                                        <span>Ngày sinh</span>
+                                        <span>{{dob ? dob : '-----------------'}}</span>
                                     </li>
+                                  <li class="d-flex align-items-center justify-content-between">
+                                    <span>SĐT</span>
+                                    <span>{{sdt ? sdt :'-----------------'}}</span>
+                                  </li>
+
                                 </ul>
                                 <hr>
                                 <ul>
                                     <li class="d-flex align-items-center justify-content-between">
-                                        <span>Lorem ipsum dolor</span>
-                                        <span>$80</span>
+                                        <span>Nha sĩ</span>
+                                        <span>Tuấn</span>
                                     </li>
                                     <li class="d-flex align-items-center justify-content-between">
-                                        <span>Lorem ipsum dolor</span>
-                                        <span>$140</span>
+                                        <span>Dịch vụ</span>
+                                        <span>{{dichVu?.name}}</span>
                                     </li>
+                                  <li class="d-flex align-items-center justify-content-between">
+                                    <span>Ngày</span>
+                                    <span>21/12/2032</span>
+                                  </li>
+                                  <li class="d-flex align-items-center justify-content-between">
+                                    <span>Giờ</span>
+                                    <span>12:30 Sáng</span>
+                                  </li>
+
                                 </ul>
                                 <hr>
                                 <ul>
-                                    <li class="d-flex align-items-center justify-content-between">
-                                        <span class="secondary-color"><b>Total</b></span>
-                                        <span class="secondary-color"><b>$220</b></span>
-                                    </li>
+<!--                                    <li class="d-flex align-items-center justify-content-between">-->
+<!--&lt;!&ndash;                                        <span class="secondary-color"><b>Total</b></span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <span class="secondary-color"><b>$220</b></span>&ndash;&gt;-->
+<!--                                    </li>-->
                                     <li class="d-flex align-items-center justify-content-between">
                                         <button type="submit" class="sigma_btn btn-block btn-sm mt-4" [disabled]="!appointmentForm.valid">
-                                            Confirm and Pay
+                                            Gửi yêu cầu
                                             <i class="fal fa-arrow-right ml-3"></i>
                                         </button>
                                     </li>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SuccessBookingComponent } from '../success-booking/success-booking.component';
 import { ContactComponent } from './contact.component';
 
 const routes: Routes = [{ path: '', component: ContactComponent }];

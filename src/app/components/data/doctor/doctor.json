@@ -1,25 +1,25 @@
 [
     {
         "id": 1,
-        "name": "Matthew Reyes",
+        "name": "Nguyến Tuấn Dương",
         "image":"assets/img/doctors-grid/348x350-0.jpg",
         "rating": 5,
-        "specialist": "Obstetrics & Gynaecology",
-        "location": "Hong Kong",
-        "qualification": "University of California San Francisco Parnassus Campus",
-        "experience": 5,
+        "specialist": "Chuyên khoa Răng - Hàm - Mặt",
+        "location": "Đào Tấn",
+        "qualification": "Tốt nghiệp Bác sĩ chuyên nganh Răng Hàm Mặt tại Viện Đào tạo Răng Hàm Mặt - Đại học Y Hà Nội",
+        "experience": 7,
         "available": [
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri"
+            "T2",
+            "T3",
+            "T4",
+            "T5"
         ],
         "gender": "Male",
         "fees": 100,
-        "category": [1,2],
-        "phone": "(741)376-5672",
-        "email": "example@example.com",
-        "htmltext": "<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p><div class='spacer'></div><h4>Subspecialities</h4><p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p><div class='row'><div class='col-lg-6'><div class='sigma_general-list style-3'><ul><li> <i class='far fa-check'></i> <span>Best Fitness Excercises</span></li><li> <i class='far fa-check'></i> <span>Combine Fitness and Lifestyle</span></li><li> <i class='far fa-check'></i> <span>Achieve a Specific Goal</span></li></ul></div></div><div class='col-lg-6'><div class='sigma_general-list style-3'><ul><li> <i class='far fa-check'></i> <span>Best Fitness Excercises</span></li><li> <i class='far fa-check'></i> <span>Combine Fitness and Lifestyle</span></li><li> <i class='far fa-check'></i> <span>Achieve a Specific Goal</span></li></ul></div></div></div>",
+        "category": [1,2,3],
+        "phone": "09222222222",
+        "email": "duong12@gmail.com",
+        "htmltext": "- Tốt nghiệp Bác sĩ chuyên nganh Răng Hàm Mặt tại Viện Đào tạo Răng Hàm Mặt <br>- Đại học Y Hà Nội\n- Tốt nghiệp Thạc sĩ chuyên ngành RHM  về đề tài   \"Phục Hình Răng  Thẩm Mỹ Toàn Sứ\" tại Đại học Y Hà Nội.\n<br>- Tốt nghiệp cao học Việt Pháp khoa chỉnh nha, Đại học VICTOR  SEGALENT BORDEAUX2 (Cộng hòa Pháp)",
         "reviews": [
             {
                 "user": [
@@ -27,7 +27,7 @@
                 ],
                 "commentdate": "07 March",
                 "rating": 4,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                "comment": "Dịch vụ tốt"
             },
             {
                 "user": [
@@ -35,7 +35,7 @@
                 ],
                 "commentdate": "07 March",
                 "rating": 5,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                "comment": "Dịch vụ tốt"
             },
             {
                 "user": [
@@ -43,7 +43,7 @@
                 ],
                 "commentdate": "07 March",
                 "rating": 4,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                "comment": "ok"
             }
         ],
         "social":[
@@ -66,25 +66,25 @@
     },
     {
         "id": 2,
-        "name": "Rebecca Gilbert",
+        "name": "Phạm Thanh Bình",
         "image":"assets/img/doctors-grid/348x350-1.jpg",
         "rating": 4,
-        "specialist": "Obstetrics & Gynaecology",
-        "location": "Hong Kong",
-        "qualification": "University of California San Francisco Parnassus Campus",
+        "specialist": "Chuyên khoa tiểu phẫu, cấy ghép implant",
+        "location": "Quan Hoa",
+        "qualification": "Tốt nghiệp Bác sĩ chuyên ngành Răng Hàm Mặt tại Trường Đại học Y Hà Nội",
         "experience": 5,
         "available": [
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri"
+            "T2",
+            "T4",
+            "T5",
+            "T6"
         ],
         "gender": "Male",
         "fees": "",
         "category": [3,4],
         "phone": "(741)376-5672",
         "email": "example@example.com",
-        "htmltext": "<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p><div class='spacer'></div><h4>Subspecialities</h4><p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p><div class='row'><div class='col-lg-6'><div class='sigma_general-list style-3'><ul><li> <i class='far fa-check'></i> <span>Best Fitness Excercises</span></li><li> <i class='far fa-check'></i> <span>Combine Fitness and Lifestyle</span></li><li> <i class='far fa-check'></i> <span>Achieve a Specific Goal</span></li></ul></div></div><div class='col-lg-6'><div class='sigma_general-list style-3'><ul><li> <i class='far fa-check'></i> <span>Best Fitness Excercises</span></li><li> <i class='far fa-check'></i> <span>Combine Fitness and Lifestyle</span></li><li> <i class='far fa-check'></i> <span>Achieve a Specific Goal</span></li></ul></div></div></div>",
+        "htmltext": " - Tốt nghiệp Bác sĩ chuyên ngành Răng Hàm Mặt tại Trường Đại học Y Hà Nội\n<br>- Chứng nhận đào tạo \"Phục hình  thẩm mỹ răng\" tại Trung tâm Đào tạo Kỹ năng Nha khoa HANOIDENT",
         "reviews": [
             {
                 "user": [
@@ -92,7 +92,7 @@
                 ],
                 "commentdate": "07 March",
                 "rating": 4,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                "comment": "Dịch vụ tốt"
             },
             {
                 "user": [
@@ -100,7 +100,7 @@
                 ],
                 "commentdate": "07 March",
                 "rating": 5,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                "comment": "5 sao"
             },
             {
                 "user": [
@@ -108,7 +108,7 @@
                 ],
                 "commentdate": "07 March",
                 "rating": 4,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                "comment": "ok"
             }
         ],
         "social":[
@@ -131,26 +131,26 @@
     },
     {
         "id": 3,
-        "name": "Bobby Stanley",
+        "name": "Đinh Thị Yến",
         "image":"assets/img/doctors-grid/348x350-2.jpg",
         "rating": 5,
-        "specialist": "Obstetrics & Gynaecology",
-        "location": "Hong Kong",
+        "specialist": "Chuyên khoa chỉnh nha",
+        "location": "Quan Hoa",
         "qualification": "University of California San Francisco Parnassus Campus",
-        "experience": 5,
+        "experience": 3,
         "available": [
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri"
+            "T4",
+            "T5",
+            "T6",
+            "T7"
         ],
         "gender": "Female",
         "fees": 100,
         "category": [1,5],
         "phone": "(741)376-5672",
         "email": "example@example.com",
-        "htmltext": "<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p><div class='spacer'></div><h4>Subspecialities</h4><p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p><div class='row'><div class='col-lg-6'><div class='sigma_general-list style-3'><ul><li> <i class='far fa-check'></i> <span>Best Fitness Excercises</span></li><li> <i class='far fa-check'></i> <span>Combine Fitness and Lifestyle</span></li><li> <i class='far fa-check'></i> <span>Achieve a Specific Goal</span></li></ul></div></div><div class='col-lg-6'><div class='sigma_general-list style-3'><ul><li> <i class='far fa-check'></i> <span>Best Fitness Excercises</span></li><li> <i class='far fa-check'></i> <span>Combine Fitness and Lifestyle</span></li><li> <i class='far fa-check'></i> <span>Achieve a Specific Goal</span></li></ul></div></div></div>",
-        "reviews": [
+      "htmltext": " ",
+      "reviews": [
             {
                 "user": [
                     1
@@ -173,7 +173,7 @@
                 ],
                 "commentdate": "07 March",
                 "rating": 4,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                "comment": "Dịch vụ tốt"
             }
         ],
         "social":[
@@ -196,45 +196,30 @@
     },
     {
         "id": 4,
-        "name": "Kathryn Cooper",
+        "name": "Đỗ Thu Hà",
         "image":"assets/img/doctors-grid/348x350-3.jpg",
         "rating": 4,
-        "specialist": "Obstetrics & Gynaecology",
-        "location": "Hong Kong",
+        "specialist": "Chuyên khoa chỉnh nha",
+        "location": "Quan Hoa",
         "qualification": "University of California San Francisco Parnassus Campus",
-        "experience": 5,
+        "experience": 2,
         "available": [],
         "gender": "Female",
         "fees": 100,
         "category": [2,3],
         "phone": "(741)376-5672",
         "email": "example@example.com",
-        "htmltext": "<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p><div class='spacer'></div><h4>Subspecialities</h4><p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p><div class='row'><div class='col-lg-6'><div class='sigma_general-list style-3'><ul><li> <i class='far fa-check'></i> <span>Best Fitness Excercises</span></li><li> <i class='far fa-check'></i> <span>Combine Fitness and Lifestyle</span></li><li> <i class='far fa-check'></i> <span>Achieve a Specific Goal</span></li></ul></div></div><div class='col-lg-6'><div class='sigma_general-list style-3'><ul><li> <i class='far fa-check'></i> <span>Best Fitness Excercises</span></li><li> <i class='far fa-check'></i> <span>Combine Fitness and Lifestyle</span></li><li> <i class='far fa-check'></i> <span>Achieve a Specific Goal</span></li></ul></div></div></div>",
-        "reviews": [
+      "htmltext": " ",
+      "reviews": [
             {
                 "user": [
                     1
                 ],
                 "commentdate": "07 March",
                 "rating": 4,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
-            },
-            {
-                "user": [
-                    2
-                ],
-                "commentdate": "07 March",
-                "rating": 5,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
-            },
-            {
-                "user": [
-                    3
-                ],
-                "commentdate": "07 March",
-                "rating": 4,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                "comment": "Dịch vụ tốt"
             }
+
         ],
         "social":[
             {
@@ -256,50 +241,35 @@
     },
     {
         "id": 5,
-        "name": "Carmen Nelson",
+        "name": "Hoàng Thị Thảo",
         "image":"assets/img/doctors-grid/348x350-4.jpg",
         "rating": 4,
-        "specialist": "Obstetrics & Gynaecology",
-        "location": "Hong Kong",
+        "specialist": "Chuyên khoa chỉnh nha & phục hình",
+        "location": "Quan Hoa",
         "qualification": "University of California San Francisco Parnassus Campus",
-        "experience": 5,
+        "experience": 2,
         "available": [
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri"
+            "T5",
+            "T6",
+            "T7",
+            "CN"
         ],
         "gender": "Female",
         "fees": "",
         "category": [4,5],
         "phone": "(741)376-5672",
         "email": "example@example.com",
-        "htmltext": "<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p><div class='spacer'></div><h4>Subspecialities</h4><p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p><div class='row'><div class='col-lg-6'><div class='sigma_general-list style-3'><ul><li> <i class='far fa-check'></i> <span>Best Fitness Excercises</span></li><li> <i class='far fa-check'></i> <span>Combine Fitness and Lifestyle</span></li><li> <i class='far fa-check'></i> <span>Achieve a Specific Goal</span></li></ul></div></div><div class='col-lg-6'><div class='sigma_general-list style-3'><ul><li> <i class='far fa-check'></i> <span>Best Fitness Excercises</span></li><li> <i class='far fa-check'></i> <span>Combine Fitness and Lifestyle</span></li><li> <i class='far fa-check'></i> <span>Achieve a Specific Goal</span></li></ul></div></div></div>",
-        "reviews": [
+      "htmltext": " ",
+      "reviews": [
             {
                 "user": [
                     1
                 ],
                 "commentdate": "07 March",
                 "rating": 4,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
-            },
-            {
-                "user": [
-                    2
-                ],
-                "commentdate": "07 March",
-                "rating": 5,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
-            },
-            {
-                "user": [
-                    3
-                ],
-                "commentdate": "07 March",
-                "rating": 4,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                "comment": "Tuyệt"
             }
+
         ],
         "social":[
             {
@@ -321,11 +291,11 @@
     },
     {
         "id": 6,
-        "name": "Janice Hughes",
+        "name": "Trần Thị Thu Hiền",
         "image":"assets/img/doctors-grid/348x350-5.jpg",
         "rating": 5,
-        "specialist": "Obstetrics & Gynaecology",
-        "location": "Hong Kong",
+        "specialist": "Chuyên khoa phục hình",
+        "location": "Quan Hoa",
         "qualification": "University of California San Francisco Parnassus Campus",
         "experience": 5,
         "available": [],
@@ -334,32 +304,9 @@
         "category": [1,2],
         "phone": "(741)376-5672",
         "email": "example@example.com",
-        "htmltext": "<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p><div class='spacer'></div><h4>Subspecialities</h4><p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p><div class='row'><div class='col-lg-6'><div class='sigma_general-list style-3'><ul><li> <i class='far fa-check'></i> <span>Best Fitness Excercises</span></li><li> <i class='far fa-check'></i> <span>Combine Fitness and Lifestyle</span></li><li> <i class='far fa-check'></i> <span>Achieve a Specific Goal</span></li></ul></div></div><div class='col-lg-6'><div class='sigma_general-list style-3'><ul><li> <i class='far fa-check'></i> <span>Best Fitness Excercises</span></li><li> <i class='far fa-check'></i> <span>Combine Fitness and Lifestyle</span></li><li> <i class='far fa-check'></i> <span>Achieve a Specific Goal</span></li></ul></div></div></div>",
-        "reviews": [
-            {
-                "user": [
-                    1
-                ],
-                "commentdate": "07 March",
-                "rating": 4,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
-            },
-            {
-                "user": [
-                    2
-                ],
-                "commentdate": "07 March",
-                "rating": 5,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
-            },
-            {
-                "user": [
-                    3
-                ],
-                "commentdate": "07 March",
-                "rating": 4,
-                "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
-            }
+      "htmltext": " ",
+      "reviews": [
+
         ],
         "social":[
             {
