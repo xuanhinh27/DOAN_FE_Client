@@ -50,29 +50,29 @@
                             <div class="row no-gutters">
                                 <div class="col-md-4">
                                     <div class="menu nav-item">
-                                        <a pageScroll href="#overview" class="nav-link active p-0">Overview</a>
+                                        <a pageScroll href="#overview" class="nav-link active p-0">Tổng quan </a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="menu nav-item">
-                                        <a pageScroll href="#contact" class="nav-link p-0">Location &amp; Contact</a>
+                                        <a pageScroll href="#contact" class="nav-link p-0">Địa chỉ làm việc &amp; Thông tin liên hệ</a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="menu nav-item border-0">
-                                        <a pageScroll href="#reviews" class="nav-link p-0">Review</a>
+                                        <a pageScroll href="#reviews" class="nav-link p-0">Đánh giá</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id="overview">
-                            <h4>Overview Of {{item.name}}</h4>
+                            <h4>Tổng quan {{item.name}}</h4>
                             <div [innerHtml]="item.htmltext"></div>
                         </div>
                         <div class="spacer">
                         </div>
                         <div id="contact">
-                            <h4>{{item.name}} Location &amp; Contact Information</h4>
+                            <h4>{{item.name}} Địa chỉ làm việc &amp; Thông tin liên hệ</h4>
                             <div class="sigma_contact-wrapper">
                                 <div class="sigma_contact-map">
                                     <iframe
@@ -116,41 +116,41 @@
                         </div>
                         <div class="spacer">
                         </div>
-                        <div id="reviews">
-                            <h4>Patient Experience</h4>
-                            <!-- Data -->
-                            <div class="sigma_testimonial style-14" *ngFor="let review of item.reviews">
-                                <div class="sigma_testimonial-thumb" *ngFor="let user of getAuthor(review.user)">
-                                    <img [src]="user.image" [alt]="user.name">
-                                </div>
-                                <div class="sigma_testimonial-body" *ngFor="let user of getAuthor(review.user)">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="d-block d-sm-flex align-items-center">
-                                            <div class="sigma_author-block">
-                                                <h5>
-                                                    {{user.name}}
-                                                </h5>
-                                            </div>
-                                            <div class="sigma_rating ml-sm-4 ml-0 mt-2 mt-sm-0">
-                                                <ngb-rating [max]="5" [(rate)]="review.rating" [readonly]="true">
-                                                    <ng-template let-fill="fill" let-index="index">
-                                                        <i class="far fa-star" [class.fas]="fill === 100"></i>
-                                                    </ng-template>
-                                                </ngb-rating>
-                                                <span class="ml-3">({{review.rating}}/5)</span>
-                                            </div>
-                                        </div>
-                                        <span class="sigma_testimonial-date">{{review.commentdate}}</span>
-                                    </div>
-                                    <p>"{{review.comment}}"</p>
-                                </div>
-                            </div>
-                            <!-- Data -->
-                            <button type="button" class="sigma_btn">
-                                See More
-                                <i class="fal fa-arrow-right"></i>
-                            </button>
-                        </div>
+  <!--                        <div id="reviews">-->
+  <!--                            <h4>Patient Experience</h4>-->
+  <!--                            &lt;!&ndash; Data &ndash;&gt;-->
+  <!--                            <div class="sigma_testimonial style-14" *ngFor="let review of item.reviews">-->
+  <!--                                <div class="sigma_testimonial-thumb" *ngFor="let user of getAuthor(review.user)">-->
+  <!--                                    <img [src]="user.image" [alt]="user.name">-->
+  <!--                                </div>-->
+  <!--                                <div class="sigma_testimonial-body" *ngFor="let user of getAuthor(review.user)">-->
+  <!--                                    <div class="d-flex align-items-center justify-content-between">-->
+  <!--                                        <div class="d-block d-sm-flex align-items-center">-->
+  <!--                                            <div class="sigma_author-block">-->
+  <!--                                                <h5>-->
+  <!--                                                    {{user.name}}-->
+  <!--                                                </h5>-->
+  <!--                                            </div>-->
+  <!--                                            <div class="sigma_rating ml-sm-4 ml-0 mt-2 mt-sm-0">-->
+  <!--                                                <ngb-rating [max]="5" [(rate)]="review.rating" [readonly]="true">-->
+  <!--                                                    <ng-template let-fill="fill" let-index="index">-->
+  <!--                                                        <i class="far fa-star" [class.fas]="fill === 100"></i>-->
+  <!--                                                    </ng-template>-->
+  <!--                                                </ngb-rating>-->
+  <!--                                                <span class="ml-3">({{review.rating}}/5)</span>-->
+  <!--                                            </div>-->
+  <!--                                        </div>-->
+  <!--                                        <span class="sigma_testimonial-date">{{review.commentdate}}</span>-->
+  <!--                                    </div>-->
+  <!--                                    <p>"{{review.comment}}"</p>-->
+  <!--                                </div>-->
+  <!--                            </div>-->
+  <!--                            &lt;!&ndash; Data &ndash;&gt;-->
+  <!--                            <button type="button" class="sigma_btn">-->
+  <!--                                See More-->
+  <!--                                <i class="fal fa-arrow-right"></i>-->
+  <!--                            </button>-->
+  <!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -158,31 +158,31 @@
             <div class="col-lg-4">
                 <div class="sidebar style-10 mt-5 mt-lg-0">
                     <!-- form Widget 2 -->
-                    <div class="widget">
-                        <h5 class="widget-title">Get in Touch</h5>
-                        <div class="widget-inner">
-                            <form>
-                                <div class="form-group">
-                                    <i class="fal fa-user"></i>
-                                    <input type="text" name="fname" placeholder="Name" required>
-                                </div>
-                                <div class="form-group">
-                                    <i class="fal fa-envelope"></i>
-                                    <input type="email" name="email" placeholder="Email" required>
-                                </div>
-                                <div class="form-group">
-                                    <textarea name="message" rows="5" placeholder="Message" value="" required></textarea>
-                                </div>
-                                <button type="button" class="sigma_btn btn-block btn-sm">
-                                    Send Message
-                                    <i class="fal fa-arrow-right ml-3"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
+<!--                    <div class="widget">-->
+<!--                        <h5 class="widget-title">Get in Touch</h5>-->
+<!--                        <div class="widget-inner">-->
+<!--                            <form>-->
+<!--                                <div class="form-group">-->
+<!--                                    <i class="fal fa-user"></i>-->
+<!--                                    <input type="text" name="fname" placeholder="Name" required>-->
+<!--                                </div>-->
+<!--                                <div class="form-group">-->
+<!--                                    <i class="fal fa-envelope"></i>-->
+<!--                                    <input type="email" name="email" placeholder="Email" required>-->
+<!--                                </div>-->
+<!--                                <div class="form-group">-->
+<!--                                    <textarea name="message" rows="5" placeholder="Message" value="" required></textarea>-->
+<!--                                </div>-->
+<!--                                <button type="button" class="sigma_btn btn-block btn-sm">-->
+<!--                                    Send Message-->
+<!--                                    <i class="fal fa-arrow-right ml-3"></i>-->
+<!--                                </button>-->
+<!--                            </form>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <!-- Contact Widget -->
                     <div class="widget">
-                        <h5 class="widget-title">Contact</h5>
+                        <h5 class="widget-title">Liên hệ</h5>
                         <div class="widget-inner">
                             <div class="sigma_info style-24 p-0 shadow-none">
                                 <div class="sigma_info-title">

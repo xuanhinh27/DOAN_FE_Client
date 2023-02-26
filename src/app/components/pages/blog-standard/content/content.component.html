@@ -5,7 +5,7 @@
                 <div class="col-lg-8 ">
                     <!-- style 7 -->
                     <article class="sigma_post style-7" [ngClass]="
-                    item.format === 'video' ? 'post-format-video':'' || 
+                    item.format === 'video' ? 'post-format-video':'' ||
                     item.format === 'quote' ? 'post-format-quote':'' ||
                     item.format === 'audio' ? 'post-format-audio':'' ||
                     item.format === 'link' ? 'post-format-link':''
@@ -34,12 +34,12 @@
                         </blockquote>
                         <!-- Quote -->
                         <!-- Audio -->
-                        <div class="sigma_post-thumb" *ngIf="item.format === 'audio' && item.audio != '' ">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" [src]="sanitnizeAudioURL(item.audio)">
-                                </iframe>
-                            </div>
-                        </div>
+<!--                        <div class="sigma_post-thumb" *ngIf="item.format === 'audio' && item.audio != '' ">-->
+<!--                            <div class="embed-responsive embed-responsive-16by9">-->
+<!--                                <iframe class="embed-responsive-item" [src]="sanitnizeAudioURL(item.audio)">-->
+<!--                                </iframe>-->
+<!--                            </div>-->
+<!--                        </div>-->
                         <!-- Audio -->
                         <!-- Link -->
                         <div class="sigma_post-body" *ngIf="item.format === 'link' && item.link != ''">

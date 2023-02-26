@@ -50,38 +50,39 @@
                             <div class="row no-gutters">
                                 <div class="col-md-4">
                                     <div class="menu nav-item">
-                                        <a pageScroll href="#overview" class="nav-link active p-0">Overview</a>
+                                        <a pageScroll href="#overview" class="nav-link active p-0">Tổng quan</a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="menu nav-item">
-                                        <a pageScroll href="#contact" class="nav-link p-0">Location &amp; Contact</a>
+                                        <a pageScroll href="#contact" class="nav-link p-0">Địa chỉ làm việc &amp; Thông tin liên hệ</a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="menu nav-item border-0">
-                                        <a pageScroll href="#reviews" class="nav-link p-0">Review</a>
+                                        <a pageScroll href="#reviews" class="nav-link p-0">Đánh giá</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id="overview">
-                            <h4>Overview Of {{item.name}}</h4>
+                            <h4>Tổng quan về nha sĩ: {{item.name}}</h4>
                             <div [innerHtml]="item.htmltext"></div>
                         </div>
                         <div class="spacer">
                         </div>
                         <div id="contact">
-                            <h4>{{item.name}} Location &amp; Contact Information</h4>
+                            <h4>{{item.name}} ( Địa chỉ làm việc &amp; Thông tin liên hệ)</h4>
                             <div class="sigma_contact-wrapper">
-                                <div class="sigma_contact-map">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9914406081493!2d2.292292615201654!3d48.85837360866272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2sin!4v1571115084828!5m2!1sen!2sin"
-                                        height="600" allowfullscreen="">
-                                    </iframe>
-                                </div>
+<!--                                <div class="sigma_contact-map">-->
+<!--                                    <iframe-->
+<!--                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9914406081493!2d2.292292615201654!3d48.85837360866272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2sin!4v1571115084828!5m2!1sen!2sin"-->
+<!--                                        height="600" allowfullscreen="">-->
+<!--                                    </iframe>-->
+<!--                                </div>-->
+                              <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=225%20Quan%20hoa+(s)&amp;t=k&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">area maps</a></iframe></div>
                                 <div class="sigma_contact-blocks">
-                                    <h5>Hospital Address</h5>
+                                    <h5>Địa chỉ phòng khám</h5>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="sigma_contact-block style-3">
@@ -159,15 +160,15 @@
                 <div class="sidebar style-10 mt-5 mt-lg-0">
                     <!-- form Widget -->
                     <div class="widget widget-form">
-                        <h5 class="widget-title">Booking Summary</h5>
+                        <h5 class="widget-title">Đặt lịch khám</h5>
                         <div class="widget-inner">
                             <form>
-                                <label>Date</label>
+                                <label>Ngày</label>
                                 <div class="form-group">
                                     <i class="fal fa-calendar-alt"></i>
                                     <input type="text" name="date" data-provide="datepicker" placeholder="07/10/2021">
                                 </div>
-                                <label>Time</label>
+                                <label>Giờ</label>
                                 <div class="form-group mb-0">
                                     <i class="far fa-clock"></i>
                                     <input type="text" name="time" placeholder="08:30 PM">
@@ -176,55 +177,27 @@
                         </div>
                         <hr>
                         <div class="widget-inner widget-service">
-                            <form>
-                                <div class="form-group">
-                                    <label>Choose Service</label>
-                                    <ul>
-                                        <li class="d-flex justify-content-between mb-3">
-                                            <div class="d-flex">
-                                                <input type="checkbox" id="checkbox" name="checkbox">
-                                                <label class="mb-0" for="checkbox">Lorem ipsum dolor</label>
-                                            </div>
-                                            <span>$80</span>
-                                        </li>
-                                        <li class="d-flex justify-content-between mb-3">
-                                            <div class="d-flex">
-                                                <input type="checkbox" id="checkbox1" name="checkbox">
-                                                <label class="mb-0" for="checkbox1">Lorem ipsum dolor</label>
-                                            </div>
-                                            <span>$80</span>
-                                        </li>
-                                        <li class="d-flex justify-content-between">
-                                            <div class="d-flex">
-                                                <input type="checkbox" id="checkbox2" name="checkbox">
-                                                <label class="mb-0" for="checkbox2">Lorem ipsum dolor</label>
-                                            </div>
-                                            <span>$80</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a routerLink="/appointment" class="sigma_btn btn-block btn-sm">
-                                    Book Appointment
-                                    <i class="fal fa-arrow-right ml-3"></i>
-                                </a>
-                            </form>
+                          <a routerLink="/appointment" class="sigma_btn btn-block btn-sm">
+                            Đặt lịch
+                            <i class="fal fa-arrow-right ml-3"></i>
+                          </a>
                         </div>
                     </div>
                     <!-- form Widget 2 -->
                     <div class="widget">
-                        <h5 class="widget-title">Get in Touch</h5>
+                        <h5 class="widget-title">Liên hệ</h5>
                         <div class="widget-inner">
                             <form>
                                 <div class="form-group">
                                     <i class="fal fa-user"></i>
-                                    <input type="text" name="fname" placeholder="Name" required>
+                                    <input type="text" name="fname" placeholder="Họ và tên" required>
                                 </div>
                                 <div class="form-group">
                                     <i class="fal fa-envelope"></i>
                                     <input type="email" name="email" placeholder="Email" required>
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="message" rows="5" placeholder="Message" value="" required></textarea>
+                                    <textarea name="message" rows="5" placeholder="Lời nhắn" value="" required></textarea>
                                 </div>
                                 <button type="button" class="sigma_btn btn-block btn-sm">
                                     Send Message
@@ -235,7 +208,7 @@
                     </div>
                     <!-- Contact Widget -->
                     <div class="widget">
-                        <h5 class="widget-title">Contact</h5>
+                        <h5 class="widget-title">Liên hệ</h5>
                         <div class="widget-inner">
                             <div class="sigma_info style-24 p-0 shadow-none">
                                 <div class="sigma_info-title">
@@ -244,8 +217,8 @@
                                     </span>
                                 </div>
                                 <div class="sigma_info-description">
-                                    <h5>Our Phone</h5>
-                                    <p>Phone No.: {{item.phone}}</p>
+                                    <h5>Số điện thoại</h5>
+                                    <p> {{item.phone}}</p>
                                 </div>
                             </div>
                             <div class="sigma_info style-24 p-0 shadow-none">
@@ -255,8 +228,8 @@
                                     </span>
                                 </div>
                                 <div class="sigma_info-description">
-                                    <h5>Our Email</h5>
-                                    <p>Inquiries: {{item.email}}</p>
+                                    <h5>Email</h5>
+                                    <p> {{item.email}}</p>
                                 </div>
                             </div>
                             <div class="sigma_info style-24 p-0 shadow-none mb-0">
@@ -266,7 +239,7 @@
                                     </span>
                                 </div>
                                 <div class="sigma_info-description">
-                                    <h5>Our Address</h5>
+                                    <h5>Địa chỉ làm việc</h5>
                                     <p>{{item.location}}</p>
                                 </div>
                             </div>

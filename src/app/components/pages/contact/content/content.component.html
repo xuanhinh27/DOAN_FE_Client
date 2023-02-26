@@ -37,10 +37,10 @@
             </textarea>
                         </div>
                     </div>
-                    <re-captcha (resolved)="resolved($event)" name="recaptcha" [(ngModel)]="model.recaptcha"
-                        siteKey="6LdxUhMaAAAAAIrQt-_6Gz7F_58S4FlPWaxOh5ib" size="invisible"></re-captcha>
+<!--                    <re-captcha (resolved)="resolved($event)" name="recaptcha" [(ngModel)]="model.recaptcha"-->
+<!--                        siteKey="6LdxUhMaAAAAAIrQt-_6Gz7F_58S4FlPWaxOh5ib" size="invisible"></re-captcha>-->
                     <div class="col-12 text-center">
-                        <button type="submit" [disabled]="!contactForm.form.valid">Submit Request</button>
+                        <button type="submit" [disabled]="!contactForm.form.valid">Gửi yêu cầu</button>
                         <!-- Form Messages -->
                         <div class="service-error mt-4 w-100" *ngIf="error">
                             <ngb-alert type="danger" class="mb-0 w-100" [dismissible]="false">
