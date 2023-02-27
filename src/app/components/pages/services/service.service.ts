@@ -1,7 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
- 
-import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -12,22 +10,16 @@ export class ServiceService {
   constructor(
     private  http: HttpClient
   ) {}
-  booking(data:any): Observable<any> {
-    return this.http.post(this.url + "/appointment/add",data,{ headers:new HttpHeaders().set('Content-Type','application/json')})
+  booking(data:any){
+    return this.http.post(this.url + "/appointment/add",data,{ })
      
   }
- 
-  getCategory(){
-    return this.http.get(this.url + "/category/get",{ })
+  getCategory(data:any){
+    return this.http.post(this.url + "/category/get",data,{ })
      
   }
-  getDentist(){
-    return this.http.get(this.url + "/user/get",{})
-     
-  }
-  getTime(data:any){
-    return this.http.get(this.url + "/appointment/getByCategory/"+data,{})
+  getDoc(data:any){
+    return this.http.post(this.url + "/user/get",data,{ })
      
   }
 }
- 
