@@ -1,7 +1,7 @@
 <div class="sidebar-style-9">
     <div class="section">
         <div class="container">
-            <form [formGroup]="appointmentForm" (ngSubmit)="onAppointmentFormSubmit()">
+            <form [formGroup]="appointmentForm" >
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="sigma_form style-7">
@@ -11,79 +11,73 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <i class="fal fa-user"></i>
-                                            <input class="form-control" type="text" formControlName="fullname" [(ngModel)]="name" placeholder="Default input" aria-label="default input example">
+                                            <input style="font-size: 16px" class="form-control" type="text"  formControlName="name" [(ngModel)]="name" placeholder="Họ và tên" aria-label="default input example">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <i class="fal fa-at"></i>
-                                            <input type="email" [(ngModel)]="email" formControlName="email" placeholder="Email">
+                                            <input style="font-size: 16px" type="email" [(ngModel)]="email" formControlName="email" placeholder="Email">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <i class="fal fa-calendar-alt"></i>
-                                            <input type="text" [(ngModel)]="dob" formControlName="dateofbirth" data-provide="datepicker"
-                                                placeholder="Ngày sinh">
+                                        <div class="form-group"  >
+                                          <input style="font-size: 16px" placeholder="Ngày sinh"  [(ngModel)]="dob" formControlName="dob"   onfocus="(this.type='date')" onblur="(this.type='date')"  type="text"  />
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <i class="fal fa-phone"></i>
-                                            <input  [(ngModel)]="sdt" type="text" formControlName="phoneno" placeholder="SĐT">
+                                            <input style="font-size: 16px"   formControlName="phone" [(ngModel)]="sdt" type="text" placeholder="Số điện thoại">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-block d-flex">
                                 <h4 class="mb-0 mr-4">Giới tính:</h4>
-                                <div class="d-flex align-items-center">
-                                    <input type="radio" id="radio" formControlName="gender" value="Male">
-                                    <label class="mb-0" for="radio">Nam</label>
+                                <div class="d-flex align-items-center" style="font-size: 16px">
+                                    <input type="radio" id="radio"  formControlName="gender"  value="Male">
+                                    <label class="mb-0" for="radio" style="font-size: 16px">Nam</label>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
-                                    <input type="radio" id="radio2" formControlName="gender" value="Female">
-                                    <label class="mb-0" for="radio2">Nữ</label>
+                                    <input type="radio" id="radio2"  value="Female">
+                                    <label class="mb-0" for="radio2" style="font-size: 16px">Nữ</label>
                                 </div>
                             </div>
                             <div class="form-block">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <select  formControlName="service" [(ngModel)]="dichVu">
-                                              <option *ngFor="let a of items" [ngValue]="a">{{a.name}}</option>
-                                            </select>
+                                          <select class="form-group"   [(ngModel)]="dichVu" [ngModelOptions]="{standalone: true}"   style="font-size: 16px">
+                                            <option selected disabled>Chọn dịch vụ</option>
+                                            <option *ngFor="let a of items"   [ngValue]="a">{{a.name}}</option>
+                                          </select>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <select class="form-select"  >
-                                               
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                          <select class="form-group"  [(ngModel)]="nhaSi" [ngModelOptions]="{standalone: true}" style="font-size: 16px">
+                                            <option selected disabled>Chọn nha sĩ</option>
+                                            <option *ngFor="let a of items"   [ngValue]="a">{{a.name}}</option>
                                               </select>
                                         </div>
                                     </div>
- 
                                     <div class="col-12">
                                         <div class="form-group">
-                                            
-                                       
-                                                <input id="startDate" class="form-control" type="date" />
-
+                                                <input id="startDate" style="font-size: 16px"  formControlName="date"  [(ngModel)]="dateBooking" placeholder="Ngày hẹn" onfocus="(this.type='date')" onblur="(this.type='text')"  type="text"     />
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <select  formControlName="condition" >
+                                          <select class="form-group"  formControlName="time"  [(ngModel)]="timeBooking" style="font-size: 16px">
+                                                <option selected disabled>Chọn thời gian</option>
                                                 <option *ngFor="let a of times" [ngValue]="a">{{a.name}}</option>
                                               </select>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <textarea   rows="7" value=""
+                                            <textarea  formControlName="des" [(ngModel)]="note" style="font-size: 16px"  rows="7"
                                                 placeholder="Ghi chú"></textarea>
                                         </div>
                                     </div>
@@ -109,7 +103,7 @@
                                     </li>
                                     <li class="d-flex align-items-center justify-content-between">
                                         <span>Ngày sinh</span>
-                                        <span>{{dob ? dob : '-----------------'}}</span>
+                                        <span>{{dob ? (dob | date:'dd/MM/YYYY') : '-----------------'}}</span>
                                     </li>
                                   <li class="d-flex align-items-center justify-content-between">
                                     <span>SĐT</span>
@@ -121,21 +115,24 @@
                                 <ul>
                                     <li class="d-flex align-items-center justify-content-between">
                                         <span>Nha sĩ</span>
-                                        <span>Tuấn</span>
+                                      <span>{{nhaSi ? nhaSi.name  : '-----------------'}}</span>
                                     </li>
                                     <li class="d-flex align-items-center justify-content-between">
                                         <span>Dịch vụ</span>
-                                        <span>{{dichVu?.name}}</span>
+                                      <span>{{dichVu ? dichVu.name  : '-----------------'}}</span>
                                     </li>
                                   <li class="d-flex align-items-center justify-content-between">
                                     <span>Ngày</span>
-                                    <span>21/12/2032</span>
+                                    <span>{{dob ? (dob | date:'dd/MM/YYYY') : '-----------------'}}</span>
                                   </li>
                                   <li class="d-flex align-items-center justify-content-between">
                                     <span>Giờ</span>
-                                    <span>12:30 Sáng</span>
+                                    <span>{{timeBooking ? timeBooking.name  : '-----------------'}}</span>
                                   </li>
-
+                                  <li class="d-flex align-items-center justify-content-between" style="width: 100%">
+                                    <span style="width: 50%">Ghi chú</span>
+                                    <span style="max-width: 50%;word-wrap: break-word;" >{{note ? note  : '-----------------'}}</span>
+                                  </li>
                                 </ul>
                                 <hr>
                                 <ul>
@@ -144,7 +141,7 @@
 <!--&lt;!&ndash;                                        <span class="secondary-color"><b>$220</b></span>&ndash;&gt;-->
 <!--                                    </li>-->
                                     <li class="d-flex align-items-center justify-content-between">
-                                        <button type="submit" class="sigma_btn btn-block btn-sm mt-4" [disabled]="!appointmentForm.valid">
+                                        <button type="submit" class="sigma_btn btn-block btn-sm mt-4" [disabled]="!appointmentForm.valid" (click)="submit()">
                                             Gửi yêu cầu
                                             <i class="fal fa-arrow-right ml-3"></i>
                                         </button>

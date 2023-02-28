@@ -9,21 +9,22 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { SuccessBookingComponent } from '../success-booking/success-booking.component';
- 
+
 
 @NgModule({
   declarations: [
     AppointmentComponent,
     ContentComponent,
- 
+
   ],
-  imports: [ 
+  imports: [
     CommonModule,
     AppointmentRoutingModule,
     SharedModule,
     NgbModule,
     FormsModule,
     ReactiveFormsModule
+
   ]
 })
 export class AppointmentModule { }

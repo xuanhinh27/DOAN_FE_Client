@@ -8,12 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
- 
+import {SuccessBookingComponent} from "./components/pages/success-booking/success-booking.component";
+import {SuccessBookingModule} from "./components/pages/success-booking/success-booking.module";
+
 
 @NgModule({
   declarations: [
     AppComponent,
- 
+
+
   ],
   imports: [
     BrowserModule,
@@ -22,8 +25,10 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     BreadcrumbModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    SuccessBookingModule
   ],
+
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

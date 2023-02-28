@@ -13,32 +13,29 @@ export class ContentComponent implements OnInit {
   constructor(
     private formbuild: FormBuilder,
     private apiService: ServiceService,
-  
     private router: Router
      ) { }
   appointmentForm = this.formbuild.group({
-    fullname: ['', Validators.required],
+    name: ['', Validators.required],
     email: ['', Validators.required],
-    dateofbirth: ['', Validators.required],
-    phoneno: ['', Validators.required],
+    dob: ['', Validators.required],
+    phone: ['', Validators.required],
     gender: ['', Validators.required],
-    hospital: ['', Validators.required],
-    service: ['', Validators.required],
+    service: ['' ],
+    dentist: ['' ],
     date: ['', Validators.required],
-    doctor: ['', Validators.required],
-    remarks: ['', Validators.required],
-    cardName: ['', Validators.required],
-    cardNumber: ['', Validators.required],
-    expDate: ['', Validators.required],
-    cardCvv: ['', Validators.required],
-    condition: ['', Validators.required],
+    time: ['', Validators.required],
+    des: ['', Validators.required],
   });
   name:any
   email:any
-  dob:any
+  dob:string =''
   sdt:any
-  dichVu:any
-
+  dichVu :any
+  nhaSi: any = "";
+  timeBooking:any;
+  dateBooking:any;
+  note:any
   items: any[] = [
     { id: 1, name: 'one' },
     { id: 2, name: 'two' },
@@ -59,34 +56,29 @@ export class ContentComponent implements OnInit {
     { value: '17', name: '17:00 Chiều' },
     { value: '18', name: '18:00 Chiều' }
   ];
-  onAppointmentFormSubmit() {
-    console.warn(this.appointmentForm.value);
-    this.appointmentForm.reset();
-  }
-  ok(){
-     this.appointmentForm.get('fullname')?.value
-  }
+
   ngOnInit(): void {
-this.submit()
+
+// this.submit()
   }
   submit(){
- 
+
+    // @ts-ignore
     let data:any = {
-      categoryId: "1",
-      userId:"3",
-      name: "hinh",
-      description: "aasdasdasdaaaaaa",
-      price: "22222",
-      email: "hinh.dxs2k@gmail.com",
-      dob: "hinh",
-      phone: "aaaaaa",
-      date: "2023/12/02",
-      time: "20:20 PM"
+      categoryId:this.dichVu.id,
+      userId:this.nhaSi.id,
+      name: this.name,
+      description: this.note,
+      email: this.email,
+      dob: this.dob,
+      phone: this.sdt,
+      date: this.dateBooking,
+      time: this.timeBooking.value,
     }
     this.apiService.booking(data).subscribe((res:any)=>{
       if(res){
- 
-this.router.navigate(['/dashboard']);
+
+
       }
     })
    }
