@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceService } from '../../services/service.service';
-
+import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -13,7 +13,8 @@ export class ContentComponent implements OnInit {
   constructor(
     private formbuild: FormBuilder,
     private apiService: ServiceService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
      ) { }
   appointmentForm = this.formbuild.group({
     name: ['', Validators.required],
@@ -36,6 +37,9 @@ export class ContentComponent implements OnInit {
   timeBooking:any;
   dateBooking:any;
   note:any
+  success:number = 1
+  bookingOk:boolean = true
+
   items: any[] = [
     { id: 1, name: 'one' },
     { id: 2, name: 'two' },
@@ -58,12 +62,23 @@ export class ContentComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-
-// this.submit()
+    this.route.queryParams.subscribe((params) => {
+      if (params && params["id"]) {
+        let data :any = {
+          id: params["id"],
+          status: params["status"]
+        }
+        this.apiService.update(data).subscribe((res:any)=>{
+          if(res){
+            this.bookingOk = true
+            this.success = 3
+          }else this.bookingOk = false
+        })
+      }
+    });
   }
   submit(){
 
-    // @ts-ignore
     let data:any = {
       categoryId:this.dichVu.id,
       userId:this.nhaSi.id,
@@ -77,8 +92,9 @@ export class ContentComponent implements OnInit {
     }
     this.apiService.booking(data).subscribe((res:any)=>{
       if(res){
-
-
+        if(res.status){
+          this.success = 2
+        }
       }
     })
    }

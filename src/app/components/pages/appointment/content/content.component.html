@@ -1,6 +1,6 @@
 <div class="sidebar-style-9">
     <div class="section">
-        <div class="container">
+        <div *ngIf="success === 1" class="container">
             <form [formGroup]="appointmentForm" >
                 <div class="row">
                     <div class="col-lg-8">
@@ -153,5 +153,18 @@
                 </div>
             </form>
         </div>
+      <div *ngIf="success === 2" style="display: flex;    align-items: center;
+    flex-direction: column;">
+
+        <i style="    font-size: 100px;color:#3595cf" class="far fa-paper-plane"></i>
+        <span style="font-weight:600; font-size: 24px">Yêu cầu của bạn đã được gửi đi</span>
+        <span style="font-size: 20px;color: red;">Vui lòng kiểm tra SMS hoặc Email để xác nhận!</span>
+      </div>
+      <div *ngIf="bookingOk && success !== 1 && success !== 2" style="display: flex;    align-items: center;
+    flex-direction: column;">
+        <i style="font-size: 100px;color:#35cf53" class="fas fa-check-circle"></i>
+        <span style="font-weight:600; font-size: 24px">Đặt lịch thành công</span>
+        <span style="font-size: 20px;color: red;">Cảm ơn bạn đã đặt lịch khám !</span>
+      </div>
     </div>
 </div>

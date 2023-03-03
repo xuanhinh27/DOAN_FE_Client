@@ -12,14 +12,18 @@ export class ServiceService {
   ) {}
   booking(data:any){
     return this.http.post(this.url + "/appointment/add",data,{ })
-     
+
   }
   getCategory(data:any){
     return this.http.post(this.url + "/category/get",data,{ })
-     
+
   }
   getDoc(data:any){
     return this.http.post(this.url + "/user/get",data,{ })
-     
+
+  }
+  update(data:any){
+    return this.http.post(this.url + "/appointment/updateStatus",data,{ })
+
   }
 }
