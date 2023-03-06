@@ -50,28 +50,28 @@
                                         <div class="form-group">
                                           <select class="form-group"   [(ngModel)]="dichVu" [ngModelOptions]="{standalone: true}"   style="font-size: 16px">
                                             <option selected disabled>Chọn dịch vụ</option>
-                                            <option *ngFor="let a of items"   [ngValue]="a">{{a.name}}</option>
+                                            <option *ngFor="let a of listService"   [ngValue]="a">{{a.name}}</option>
                                           </select>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                          <select class="form-group"  [(ngModel)]="nhaSi" [ngModelOptions]="{standalone: true}" style="font-size: 16px">
+                                          <select class="form-group"  [(ngModel)]="nhaSi"  (ngModelChange)="getAppoint()"   [ngModelOptions]="{standalone: true}" style="font-size: 16px">
                                             <option selected disabled>Chọn nha sĩ</option>
-                                            <option *ngFor="let a of items"   [ngValue]="a">{{a.name}}</option>
+                                            <option    *ngFor="let a of listDoc" [ngValue]="a">{{a.name}}</option>
                                               </select>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                                <input id="startDate" style="font-size: 16px"  formControlName="date"  [(ngModel)]="dateBooking" placeholder="Ngày hẹn" onfocus="(this.type='date')" onblur="(this.type='text')"  type="text"     />
+                                                <input id="startDate" style="font-size: 16px" (ngModelChange)="calcDate()"  formControlName="date"  [(ngModel)]="dateBooking" placeholder="Ngày hẹn" onfocus="(this.type='date')" onblur="(this.type='text')"  type="text"     />
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                          <select class="form-group"  formControlName="time"  [(ngModel)]="timeBooking" style="font-size: 16px">
+                                          <select class="form-group"  formControlName="time"     [(ngModel)]="timeBooking" (ngModelChange)="calcDate()" style="font-size: 16px">
                                                 <option selected disabled>Chọn thời gian</option>
-                                                <option *ngFor="let a of times" [ngValue]="a">{{a.name}}</option>
+                                                <option *ngFor="let a of times"   [disabled]="a.disable"  [ngValue]="a">{{a.name}}</option>
                                               </select>
                                         </div>
                                     </div>

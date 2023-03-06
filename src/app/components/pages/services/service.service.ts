@@ -14,16 +14,18 @@ export class ServiceService {
     return this.http.post(this.url + "/appointment/add",data,{ })
 
   }
-  getCategory(data:any){
-    return this.http.post(this.url + "/category/get",data,{ })
+  getCategory(){
+    return this.http.get(this.url + "/category/get",{ })
 
   }
-  getDoc(data:any){
-    return this.http.post(this.url + "/user/get",data,{ })
-
+  getDoc(){
+    return this.http.get(this.url + "/user/get",{ })
   }
   update(data:any){
     return this.http.post(this.url + "/appointment/updateStatus",data,{ })
 
+  }
+  getAppoint(id:any){
+    return this.http.get(this.url + "/appointment/getByCategory/"+ id,{ })
   }
 }
