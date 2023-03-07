@@ -59,7 +59,7 @@ export class ContentComponent implements OnInit {
     { id: 6, name: 'six' },
   ];
   times: any[] = [
-    { value: '08', name: '08:00 Sáng' },
+    { value: '08', name: '08:00 Sáng',disable:true},
     { value: '09', name: '09:00 Sáng' },
     { value: '10', name: '10:00 Sáng' },
     { value: '11', name: '11:00 Sáng' },
