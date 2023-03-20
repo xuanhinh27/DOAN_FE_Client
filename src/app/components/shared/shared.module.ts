@@ -17,6 +17,7 @@ import { ServiceSidebarComponent } from './service-sidebar/service-sidebar.compo
 import { DoctorSidebarComponent } from './doctor-sidebar/doctor-sidebar.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { ClinicSidebarComponent } from './clinic-sidebar/clinic-sidebar.component';
+import { ChatgptComponent } from './chatgpt/chatgpt.component';
 
 
 
@@ -31,7 +32,8 @@ import { ClinicSidebarComponent } from './clinic-sidebar/clinic-sidebar.componen
     ServiceSidebarComponent,
     DoctorSidebarComponent,
     MobileMenuComponent,
-    ClinicSidebarComponent
+    ClinicSidebarComponent,
+     ChatgptComponent
   ],
   imports: [
     CommonModule,
@@ -45,6 +47,7 @@ import { ClinicSidebarComponent } from './clinic-sidebar/clinic-sidebar.componen
   exports:[
     HeaderComponent,
     HeaderTwoComponent,
+    ChatgptComponent,
     FooterComponent,
     BreadcrumbsComponent,
     GallerySliderComponent,

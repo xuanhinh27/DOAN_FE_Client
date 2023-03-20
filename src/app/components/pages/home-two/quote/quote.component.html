@@ -24,8 +24,8 @@
                             <textarea rows="5" placeholder="Ghi chú" name="message" [(ngModel)]="model.message"
                                 required></textarea>
                         </div>
-                        <re-captcha (resolved)="resolved($event)" name="recaptcha" [(ngModel)]="model.recaptcha"
-                            siteKey="6LdxUhMaAAAAAIrQt-_6Gz7F_58S4FlPWaxOh5ib" size="invisible"></re-captcha>
+                        <!-- <re-captcha (resolved)="resolved($event)" name="recaptcha" [(ngModel)]="model.recaptcha"
+                            siteKey="6LdxUhMaAAAAAIrQt-_6Gz7F_58S4FlPWaxOh5ib" size="invisible"></re-captcha> -->
                         <button type="submit" class="btn-block secondary"
                             [disabled]="!contactForm.form.valid">Gửi</button>
                         <!-- Form Messages -->

@@ -19,6 +19,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { CtaComponent } from './cta/cta.component';
 import { QuoteComponent } from './quote/quote.component';
 import { BlogsComponent } from './blogs/blogs.component';
+ 
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { BlogsComponent } from './blogs/blogs.component';
     TestimonialsComponent,
     CtaComponent,
     QuoteComponent,
-    BlogsComponent
+    BlogsComponent,
+    
   ],
   imports: [
     CommonModule,
