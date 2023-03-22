@@ -1,96 +1,58 @@
 <div class="sidebar-style-9">
-  <div class="section">
-    <div *ngIf="success === 1" class="container">
+  <div class="section" style="text-align: center !important;">
+    <div  *ngIf="isLoading" class="spinner-border" style="width: 4rem; height: 4rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div *ngIf="success === 1 && !isLoading" class="container">
+ 
       <form [formGroup]="appointmentForm">
+ 
         <div class="row">
           <div class="col-lg-8">
             <div class="sigma_form style-7">
               <div class="form-block">
-                <h4>Thông tin cá nhân:</h4>
+                <h4>Thông tin cá nhân</h4>
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
                       <i class="fal fa-user"></i>
-                      <input
-                        style="font-size: 16px"
-                        class="form-control"
-                        type="text"
-                        formControlName="name"
-                        [(ngModel)]="name"
-                        placeholder="Họ và tên"
-                        aria-label="default input example"
-                      />
+                      <input style="font-size: 16px" class="form-control" type="text" formControlName="name"
+                        [(ngModel)]="name" placeholder="Họ và tên" aria-label="default input example"  required/>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <i class="fal fa-at"></i>
-                      <input
-                        style="font-size: 16px"
-                        type="email"
-                        [(ngModel)]="email"
-                        formControlName="email"
-                        placeholder="Email"
-                      />
+                      <input style="font-size: 16px" type="email" [(ngModel)]="email" formControlName="email"
+                        placeholder="Email" />
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <input
-                        style="font-size: 16px"
-                        placeholder="Ngày sinh"
-                        [(ngModel)]="dob"
-                        formControlName="dob"
-                        onfocus="(this.type='date')"
-                        onblur="(this.type='date')"
-                        type="text"
-                      />
+                      <input style="font-size: 16px" placeholder="Ngày sinh" [(ngModel)]="dob" formControlName="dob"
+                        onfocus="(this.type='date')" onblur="(this.type='date')" type="text" />
                     </div>
+                    <div class="invalid-feedback">Example invalid select feedback</div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <i class="fal fa-phone"></i>
-                      <input
-                        style="font-size: 16px"
-                        formControlName="phone"
-                        [(ngModel)]="sdt"
-                        type="text"
-                        placeholder="Số điện thoại"
-                      />
+                      <input style="font-size: 16px" formControlName="phone" [(ngModel)]="sdt" type="text"
+                        placeholder="Số điện thoại" />
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="form-block d-flex">
-                <h4 class="mb-0 mr-4">Giới tính:</h4>
-                <div class="d-flex align-items-center" style="font-size: 16px">
-                  <input
-                    type="radio"
-                    id="radio"
-                    formControlName="gender"
-                    value="Male"
-                  />
-                  <label class="mb-0" for="radio" style="font-size: 16px"
-                    >Nam</label
-                  >
-                </div>
-                <div class="d-flex align-items-center ml-4">
-                  <input type="radio" id="radio2" value="Female" />
-                  <label class="mb-0" for="radio2" style="font-size: 16px"
-                    >Nữ</label
-                  >
-                </div>
+              <div class="form-block d-flex" style="justify-content: center;">
+                <h4>Thông tin cuộc hẹn</h4>
               </div>
               <div class="form-block">
                 <div class="row">
                   <div class="col-12">
+                    <div style="text-align: left;font-weight: 500;">Chọn loại dịch vụ</div>
                     <div class="form-group">
-                      <select
-                        class="form-group"
-                        [(ngModel)]="dichVu"
-                        [ngModelOptions]="{ standalone: true }"
-                        style="font-size: 16px"
-                      >
+                      <select class="form-group" [(ngModel)]="dichVu"  [ngModelOptions]="{ standalone: true }"
+                        style="font-size: 16px" >
                         <option selected disabled>Chọn dịch vụ</option>
                         <option *ngFor="let a of listService" [ngValue]="a">
                           {{ a.name }}
@@ -98,15 +60,12 @@
                       </select>
                     </div>
                   </div>
+                  <div *ngIf="!dichVu" style="color: red;  text-align: left;padding-left: 20px;">Vui lòng chọn loại dịch vụ</div>
                   <div class="col-12">
+                    <div style="text-align: left;font-weight: 500;">Chọn nha sĩ</div>
                     <div class="form-group">
-                      <select
-                        class="form-group"
-                        [(ngModel)]="nhaSi"
-                        (ngModelChange)="getAppoint()"
-                        [ngModelOptions]="{ standalone: true }"
-                        style="font-size: 16px"
-                      >
+                      <select class="form-group" [(ngModel)]="nhaSi" (ngModelChange)="getAppoint()"
+                        [ngModelOptions]="{ standalone: true }" style="font-size: 16px"  >
                         <option selected disabled>Chọn nha sĩ</option>
                         <option *ngFor="let a of listDoc" [ngValue]="a">
                           {{ a.name }}
@@ -114,51 +73,40 @@
                       </select>
                     </div>
                   </div>
+                  <div *ngIf="!nhaSi" style="color: red;  text-align: left;padding-left: 20px;">Vui lòng chọn nha sĩ</div>
                   <div class="col-12">
-                    <div class="form-group">
-                      <input
-                        id="startDate"
-                        style="font-size: 16px"
-                        (ngModelChange)="calcDate()"
-                        formControlName="date"
-                        [(ngModel)]="dateBooking"
-                        placeholder="Ngày hẹn"
-                        onfocus="(this.type='date')"
-                        onblur="(this.type='text')"
-                        type="text"
-                      />
+                    <div class="form-group" >
+                      <input id="startDate" style="font-size: 16px" placeholder="Ngày hẹn"    formControlName="date" 
+                        [(ngModel)]="dateBooking"  (ngModelChange)="calcDate()" placeholder="Ngày hẹn" onfocus="(this.type='date')"
+                        onblur="(this.type='date')" type="text" />
                     </div>
                   </div>
+                  <div *ngIf="!dateBooking" style="color: red;  text-align: left;padding-left: 20px;">Vui lòng chọn ngày hẹn</div>
                   <div class="col-12">
-                    <div class="form-group" style="
+                    <div class="form-group" style=" 
                     display: grid;
                     grid-template-columns: auto auto auto; gap: 10px;">
                       <div *ngFor="let item of times">
-                        <button style=" width: 80%;"
-                          [disabled]="item.disable"
-                          type="button"
-                          class="btn btn-primary"
-                          [ngClass]="item.disable ?'btn btn-secondary':'btn btn-primary'"
-                          [value]="item.value"
-                        >
+                        <button style=" width: 80%;"  [disabled]="item.disable" type="button" class="btn btn-primary"
+                          [ngClass]="item.disable ?'btn btn-secondary':'btn btn-primary'" [value]="item"
+                          (click)="timeBooking = item">
                           {{ item.name }}
                         </button>
                       </div>
+
+                      
                       <!-- <select class="form-group"  formControlName="time"     [(ngModel)]="timeBooking" (ngModelChange)="calcDate()" style="font-size: 16px">
                                                 <option selected disabled>Chọn thời gian</option>
                                                 <option *ngFor="let a of times"   [disabled]="a.disable"  [ngValue]="a">{{a.name}}</option>
                                               </select> -->
                     </div>
+                    <div *ngIf="!timeBooking" style="color: red;  text-align: left;
+                    padding-left: 20px;">Vui lòng chọn giờ</div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <textarea
-                        formControlName="des"
-                        [(ngModel)]="note"
-                        style="font-size: 16px"
-                        rows="7"
-                        placeholder="Ghi chú"
-                      ></textarea>
+                      <textarea formControlName="des" [(ngModel)]="note" style="font-size: 16px" rows="7"
+                        placeholder="Ghi chú"></textarea>
                     </div>
                   </div>
                 </div>
@@ -169,7 +117,7 @@
             <div class="sidebar style-10 mt-5 mt-lg-0">
               <!-- Booking Widget -->
               <div class="widget widget-booking">
-                <h5 class="widget-title">Booking Summary</h5>
+                <h5 class="widget-title">Chi tiết lịch hẹn</h5>
                 <ul>
                   <li class="d-flex align-items-center justify-content-between">
                     <span>Họ tên</span>
@@ -183,7 +131,7 @@
                     <span>Ngày sinh</span>
                     <span>{{
                       dob ? (dob | date : "dd/MM/YYYY") : "-----------------"
-                    }}</span>
+                      }}</span>
                   </li>
                   <li class="d-flex align-items-center justify-content-between">
                     <span>SĐT</span>
@@ -200,28 +148,25 @@
                     <span>Dịch vụ</span>
                     <span>{{
                       dichVu ? dichVu.name : "-----------------"
-                    }}</span>
+                      }}</span>
                   </li>
                   <li class="d-flex align-items-center justify-content-between">
                     <span>Ngày</span>
                     <span>{{
-                      dob ? (dob | date : "dd/MM/YYYY") : "-----------------"
-                    }}</span>
+                      dateBooking ? (dateBooking | date : "dd/MM/YYYY") : "-----------------"
+                      }}</span>
                   </li>
                   <li class="d-flex align-items-center justify-content-between">
                     <span>Giờ</span>
                     <span>{{
                       timeBooking ? timeBooking.name : "-----------------"
-                    }}</span>
+                      }}</span>
                   </li>
-                  <li
-                    class="d-flex align-items-center justify-content-between"
-                    style="width: 100%"
-                  >
+                  <li class="d-flex align-items-center justify-content-between" style="width: 100%;text-align: left;">
                     <span style="width: 50%">Ghi chú</span>
                     <span style="max-width: 50%; word-wrap: break-word">{{
                       note ? note : "-----------------"
-                    }}</span>
+                      }}</span>
                   </li>
                 </ul>
                 <hr />
@@ -231,12 +176,9 @@
                   <!--&lt;!&ndash;                                        <span class="secondary-color"><b>$220</b></span>&ndash;&gt;-->
                   <!--                                    </li>-->
                   <li class="d-flex align-items-center justify-content-between">
-                    <button
-                      type="submit"
-                      class="sigma_btn btn-block btn-sm mt-4"
-                      [disabled]="!appointmentForm.valid"
-                      (click)="submit()"
-                    >
+                    <button type="submit" class="sigma_btn btn-block btn-sm mt-4" 
+                      (click)="submit()"      [disabled]="!appointmentForm.valid">
+                  
                       Gửi yêu cầu
                       <i class="fal fa-arrow-right ml-3"></i>
                     </button>
@@ -248,33 +190,57 @@
         </div>
       </form>
     </div>
-    <div
-      *ngIf="success === 2"
-      style="display: flex; align-items: center; flex-direction: column"
-    >
-      <i
-        style="font-size: 100px; color: #3595cf"
-        class="far fa-paper-plane"
-      ></i>
-      <span style="font-weight: 600; font-size: 24px"
-        >Yêu cầu của bạn đã được gửi đi</span
-      >
-      <span style="font-size: 20px; color: red"
-        >Vui lòng kiểm tra SMS hoặc Email để xác nhận!</span
-      >
+ 
+    <div *ngIf="idDelet">
+      <div *ngIf="!detailBooking.id && success != 1" style="font-weight: 500;font-size: 30px;text-align: center;">
+        <div>Lịch hẹn không tồn tại !</div>
+        <div style="padding: 0 45% 0 45%;">
+          <button type="submit" class="sigma_btn btn-block btn-sm mt-4"  (click)="datLich()">
+            Đặt lịch ngay
+            <i class="fal fa-arrow-right ml-3"></i>
+          </button>
+        </div>
+      </div>
+      <div *ngIf="detailBooking.id">
+        <div style="text-align: center;font-size: 30px;
+      font-weight: 500;">Thông tin lịch hẹn</div>
+        <div class="grid-container">
+          <div class="grid-item title">Họ tên</div>
+          <div class="grid-item">{{detailBooking.name}}</div>
+          <div class="grid-item title">Ngày sinh</div>
+          <div class="grid-item">{{detailBooking.dob}}</div>
+          <div class="grid-item title">Số điện thoại</div>
+          <div class="grid-item">{{detailBooking.phone}}</div>
+          <div class="grid-item title">Email</div>
+          <div class="grid-item">{{detailBooking.email}}</div>
+          <div class="grid-item title">Dịch vụ</div>
+          <div class="grid-item">{{detailBooking.categoryName}}</div>
+          <div class="grid-item title">Nha sĩ</div>
+          <div class="grid-item">{{detailBooking.userName}}</div>
+          <div class="grid-item title">Mô tả</div>
+          <div class="grid-item">{{detailBooking.description}}</div>
+        </div>
+        <div class="form-check" style=" padding: 0 25% 0 25%;">
+          <input class="form-check-input" [(ngModel)]="check" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault" style="    text-align: left;">
+            Xác nhận hủy bỏ cuộc hẹn
+          </label>
+        </div>
+        <div style="padding: 0 45% 0 45%;">
+
+          <button type="submit" class="sigma_btn btn-block btn-sm mt-4" [disabled]="!check" (click)="delete()">
+            Gửi yêu cầu hủy
+            <i class="fal fa-arrow-right ml-3"></i>
+          </button>
+        </div>
+      </div>
     </div>
-    <div
-      *ngIf="bookingOk && success !== 1 && success !== 2"
-      style="display: flex; align-items: center; flex-direction: column"
-    >
-      <i
-        style="font-size: 100px; color: #35cf53"
-        class="fas fa-check-circle"
-      ></i>
+ 
+    <div *ngIf="success === 3  && done"
+      style="display: flex; align-items: center; flex-direction: column">
+      <i style="font-size: 100px; color: #35cf53" class="fas fa-check-circle"></i>
       <span style="font-weight: 600; font-size: 24px">Đặt lịch thành công</span>
-      <span style="font-size: 20px; color: red"
-        >Cảm ơn bạn đã đặt lịch khám !</span
-      >
+      <span style="font-size: 20px; color: red">Cảm ơn bạn đã đặt lịch khám !</span>
     </div>
   </div>
 </div>

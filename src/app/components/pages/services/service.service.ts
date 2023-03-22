@@ -26,12 +26,18 @@ export class ServiceService {
     return this.http.post(this.url + "/appointment/updateStatus",data,{ })
 
   }
+  delete(id:any){
+    return this.http.post(this.url + "/appointment/delete/"+ id,{ })
+
+  }
   getAppoint(id:any){
     return this.http.get(this.url + "/appointment/getByCategory/"+ id,{ })
   }
-  
+  getAppointByID(id:any){
+    return this.http.get(this.url + "/appointment/getById/"+ id,{ })
+  }
   chat(mess: any) {
-    let SECRET_KEY = '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'
+    let SECRET_KEY = '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'
     let messages: any = [{ role: "user", content: mess }]
     let param: any = {
         model: "gpt-3.5-turbo",

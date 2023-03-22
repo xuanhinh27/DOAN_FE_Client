@@ -46,7 +46,7 @@ export class ChatgptComponent implements OnInit {
                       objDiv.scrollTop = objDiv.scrollHeight;
                       this.value = ''
                   }, 100) 
-
+                  this.a = ''
               }
               else {
                   // this.snackBar.open('Không có dữ liệu faq', 'Đóng', { duration: 2000, horizontalPosition: 'right', verticalPosition: 'top', panelClass: ['snackBar-info'] });

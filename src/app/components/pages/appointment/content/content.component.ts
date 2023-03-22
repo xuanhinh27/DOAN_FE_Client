@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { ServiceService } from '../../services/service.service';
 import { ActivatedRoute } from '@angular/router';
+ 
 
 @Component({
   selector: 'app-content',
@@ -20,60 +21,63 @@ export class ContentComponent implements OnInit {
     private apiService: ServiceService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
   appointmentForm = this.formbuild.group({
     name: ['', Validators.required],
     email: ['', Validators.required],
     dob: ['', Validators.required],
     phone: ['', Validators.required],
-    gender: ['', Validators.required],
-    service: [''],
-    dentist: [''],
-    date: ['', Validators.required],
-    time: ['', Validators.required],
-    des: ['', Validators.required],
+    service: ['' ],
+    dentist: ['' ],
+    date: [''],
+    time: ['' ],
+    des: [''],
   });
   name: any;
   email: any;
   dob: string = '';
   sdt: any;
-
   dichVu: any;
   nhaSi: any = '';
   timeBooking: any;
-  dateBooking: any;
+  dateBooking: any = '';
+ 
   note: any;
   success: number = 1;
-  bookingOk: boolean = true;
+  bookingOk: boolean = false;
+  done: boolean = false;
+  isLoading: boolean = false;
+  check: boolean = false;
   listService: any = [];
   listDoc: any = [];
   timeDoc: any = [];
   timePick: any = [];
   isToDay = new Date();
-  items: any[] = [
-    { id: 1, name: 'one' },
-    { id: 2, name: 'two' },
-    { id: 3, name: 'three' },
-    { id: 4, name: 'four' },
-    { id: 5, name: 'five' },
-    { id: 6, name: 'six' },
-  ];
+  detailBooking: any = []
+  idDelet: any
+
   times: any[] = [
-    { value: '08', name: '08:00 Sáng',disable:true},
-    { value: '09', name: '09:00 Sáng' },
-    { value: '10', name: '10:00 Sáng' },
-    { value: '11', name: '11:00 Sáng' },
-    { value: '12', name: '12:00 Sáng' },
-    { value: '14', name: '14:00 Chiều' },
-    { value: '15', name: '15:00 Chiều' },
-    { value: '16', name: '16:00 Chiều' },
-    { value: '17', name: '17:00 Chiều' },
-    { value: '18', name: '18:00 Chiều' },
+    { value: '08', name: '08:00 Sáng', disable: false },
+    { value: '09', name: '09:00 Sáng', disable: false },
+    { value: '10', name: '10:00 Sáng', disable: false },
+    { value: '11', name: '11:00 Sáng', disable: false },
+    { value: '12', name: '12:00 Sáng', disable: false },
+    { value: '14', name: '14:00 Chiều', disable: false },
+    { value: '15', name: '15:00 Chiều', disable: false },
+    { value: '16', name: '16:00 Chiều', disable: false },
+    { value: '17', name: '17:00 Chiều', disable: false },
+    { value: '18', name: '18:00 Chiều', disable: false },
   ];
 
   ngOnInit(): void {
+ 
+    localStorage.setItem("timePick", JSON.stringify(this.times));
+   
     this.route.queryParams.subscribe((params) => {
       if (params && params['id']) {
+        this.bookingOk = params['status']
+        this.idDelet = params['id']
+        this.success = 2;
         let data: any = {
           id: params['id'],
           status: params['status'],
@@ -84,13 +88,16 @@ export class ContentComponent implements OnInit {
             this.success = 3;
           } else this.bookingOk = false;
         });
+        this.getAppointByID()
       }
     });
     this.getCate();
     this.getDoc();
   }
-
+  get f(): any { return this.appointmentForm.controls }
   submit() {
+    if(!this.nhaSi || !this.dichVu || !this.timeBooking || !this.dateBooking) return
+    this.isLoading = true
     let data: any = {
       categoryId: this.dichVu.id,
       userId: this.nhaSi.id,
@@ -105,7 +112,9 @@ export class ContentComponent implements OnInit {
     this.apiService.booking(data).subscribe((res: any) => {
       if (res) {
         if (res.status) {
-          this.success = 2;
+          this.success = 3;
+          this.done = true
+          this.isLoading = false
         }
       }
     });
@@ -125,28 +134,53 @@ export class ContentComponent implements OnInit {
       }
     });
   }
+
+  getAppointByID() {
+    this.apiService.getAppointByID(this.idDelet).subscribe((res: any) => {
+      if (res) {
+        this.detailBooking = res
+      }
+    });
+  }
+  datLich() {
+    this.success = 1
+    this.router.navigateByUrl('/appointment');
+
+
+  }
+  delete() {
+    this.apiService.delete(this.idDelet).subscribe((res: any) => {
+      if (res) {
+        location.reload()
+      }
+    });
+  }
+
   getAppoint() {
     this.apiService.getAppoint(this.nhaSi.id).subscribe((res: any) => {
       if (res) {
         this.timeDoc = res;
+        this.calcDate()
       }
     });
   }
+  timesc: any = []
   calcDate() {
-    this.timeDoc.forEach((element: any) => {
-      if (element.date === this.dateBooking) {
-        this.timePick.push(element)
+
+
+    this.timePick = [...this.timeDoc.filter((element: any) => element.date.includes(this.dateBooking))];
+
+    this.times= JSON.parse(localStorage.getItem('timePick')!)
+     this.timePick.filter((el: any) => this.times.some((s:any) => {
+      if (s.value === el.time) {
+        s.disable = true
       }
-    });
-    this.timePick.forEach((el: any) => {
-      this.times.forEach((el2: any) => {
-        if (el.time === el2.value) {
-          el2.disable = true
-        }
-      })
+    }
+
+    ));
+ 
+    
 
 
-    });
-    console.log(this.timePick);
   }
 }
