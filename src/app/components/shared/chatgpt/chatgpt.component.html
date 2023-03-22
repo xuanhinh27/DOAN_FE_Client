@@ -1,5 +1,5 @@
 <div class="chat">
-    <input type="checkbox" id="check"> <label class="chat-btn" for="check"> <i class="fa fa-commenting-o comment"></i>
+    <input type="checkbox" id="check" style="height: 0px !important;border: none !important;"> <label class="chat-btn" for="check"><span class="test">Tư vấn ngay</span><i class="fa fa-commenting-o comment"></i>
         <i class="fa fa-close close"></i> </label>
     <div class="wrapper">
         <div class="header" style="display: flex;">
@@ -8,7 +8,7 @@
 
         </div>
         <div class="chatbot-content" id="chatbot-content">
-          <div *ngIf="chatData">
+          <div  >
               <div *ngFor="let item of chatData" [ngClass]="{'userChat ':item?.role=='user','botChat':item?.role!='user'}">
                   <div class="content-chat text-break-line">
                       {{item?.content}}
@@ -18,9 +18,9 @@
       </div>
         <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3" style="position: absolute;bottom: 0px;width: 100%;">
             <div class="input-group mb-0">
-              <input type="text" class="form-control" placeholder="Type message"
+              <input type="text" class="form-control" placeholder="Nhập câu hỏi" [(ngModel)]="a"
                 aria-label="Recipient's username" aria-describedby="button-addon2" />
-              <button style="margin-left: 10px;" class="btn-info" type="button">
+              <button style="margin-left: 10px;" class="btn-info" type="button" [disabled]="!a" (click)="chat()">
                 Gửi
               </button>
             </div>

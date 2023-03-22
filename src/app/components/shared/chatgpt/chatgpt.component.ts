@@ -10,42 +10,42 @@ export class ChatgptComponent implements OnInit {
   value: any;
   chatData: any = [];
   isLoading: boolean = false;
+  a:any
   constructor(
     private apiService: ServiceService,
     ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+ 
       if (localStorage.getItem('chatData'))
-          this.chatData = localStorage.getItem('chatData')
+          this.chatData = JSON.parse(localStorage.getItem('chatData')!)
+          setTimeout(() => {
+            var objDiv = document.getElementById("chatbot-content")!;
+            objDiv.scrollTop = objDiv.scrollHeight;
+        }, 100)
   }
   chat() {
-      // if (!this.value) {
-      //     this.snackBar.open('Vui lòng nhập nội dung', 'Đóng', { duration: 2000, horizontalPosition: 'right', verticalPosition: 'top', panelClass: ['snackBar-info'] });
-      //     return
-      // }
-      this.isLoading = true;
-      this.apiService.chat(this.value).subscribe(
+      this.apiService.chat(this.a).subscribe(
           res => {
               if (res?.choices) {
                   let newUserChat: any = {
-                      content: this.value,
+                      content: this.a,
                       role: "user"
                   }
                   this.chatData.push(newUserChat);
-                  res?.choices.forEach(element => {
+                  res?.choices.forEach((element:any) => {
                       let newAssChat: any = {
                           content: element.message?.content,
                           role: element?.message?.role
                       }
                       this.chatData.push(newAssChat);
                   });
-
                   localStorage.setItem("chatData", JSON.stringify(this.chatData));
                   setTimeout(() => {
-                      var objDiv = document.getElementById("chatbot-content");
+                      let objDiv = document.getElementById("chatbot-content")!;
                       objDiv.scrollTop = objDiv.scrollHeight;
                       this.value = ''
-                  }, 100)
+                  }, 100) 
 
               }
               else {
